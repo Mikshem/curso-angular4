@@ -11,14 +11,17 @@ export class EmpleadoComponent{
     public empleado:Empleado;
     public trabajadores:Array<Empleado>;
     public trabajador_externo:boolean;
+    public color:string;
+
     constructor(){
          this.empleado= new Empleado('Micael Vaca', 27, 'Programador', true);
          this.trabajadores = [
-             new Empleado('Magaly Chambi', 30, 'Contadora', true),
+             new Empleado('Magaly Chambi', 30, 'Contadora', false),
              new Empleado('Micael Vaca', 27, 'Programador', true),
              new Empleado('Emanuel', 33, 'SEO', false)
             ];
-             this.trabajador_externo = true; 
+             this.trabajador_externo = true;
+             this.color= 'red';
     }
        
 

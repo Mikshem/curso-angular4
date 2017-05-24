@@ -1,24 +1,47 @@
 <hr>
 <h2>{{titulo}}</h2>
+<h3>Colores con Stwich</h3>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="{
+        background:color, 
+        color:'white',
+        padding: '1em'
+        }"> Es de color rojo</li>
+</ul>
+
+
 
 <div *ngIf="trabajador_externo== true">
-<button (click)="cambiarExterno(false)">Mostrar Trabajador</button>
-<ul>
-    <li>{{trabajadores[0].nombre}}</li>
-    <li>{{trabajadores[0].edad}}</li>
-    <li>{{trabajadores[0].cargo}}</li>
-    <li>{{trabajadores[0].contratado}}</li>
+<button (click)="cambiarExterno(false)">Mostrar Empleados</button>
+    <ul>
+        <li>{{trabajadores[0].nombre}}</li>
+        <li>{{trabajadores[0].edad}}</li>
+        <li>{{trabajadores[0].cargo}}</li>
+        <li>{{trabajadores[0].contratado}}</li>
 
-</ul>
+    </ul>
 </div>
 
 <div *ngIf="trabajador_externo==false">  
-<button (click)="cambiarExterno(true)">Mostrar empleado</button>
-<ul>
-    <li>{{empleado.nombre}}</li>
-    <li>{{empleado.edad}}</li>
-    <li>{{empleado.cargo}}</li>
-    <li>{{empleado.contratado}}</li>
-
-</ul>
+<button (click)="cambiarExterno(true)">Mostrar Trabajadores</button>
+    <ul>
+        <li>{{empleado.nombre}}</li>
+        <li>{{empleado.edad}}</li>
+        <li>{{empleado.cargo}}</li>
+        <li>{{empleado.contratado}}</li>
+    </ul>
 </div>
+
+<h3>Listado de empleados</h3>
+<ul>
+    <li *ngFor="let empleado of trabajadores, let i=index">
+        <strong>Empleado: {{i+1}} </strong>
+        <ul>
+            <li>{{empleado.nombre}}</li>
+            <li>{{empleado.edad}}</li>
+            <li>{{empleado.cargo}}</li>
+            <li *ngIf="empleado.contratado==true">Esta contratado</li> 
+            <li *ngIf="empleado.contratado==false">No esta contratado</li>
+        </ul>
+    </li>
+</ul>
