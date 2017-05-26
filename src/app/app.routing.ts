@@ -12,7 +12,8 @@ const appRoutes: Routes= [
   { path:'pagina-principal', component:HomeComponent},
   { path:'empleado', component: EmpleadoComponent},
   { path:'contact', component: ContactComponent},
-  { path:'**', component: EmpleadoComponent}  
+  { path:'contact/:page', component: ContactComponent},
+  { path:'**', component: HomeComponent}  
 ];
 
 export const appRoutingProviders: any[]=[];

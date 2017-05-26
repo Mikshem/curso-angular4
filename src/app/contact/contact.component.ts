@@ -8,11 +8,23 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
  })
 
  export class ContactComponent{
-     public titulo = "Pagina de Contacto...";
+     public titulo2 = 'Pagina de Contacto...';
+     public parametro;
 
      constructor(
-
+         private _route: ActivatedRoute,
+         private _router:Router
      ){}
 
+     ngOnInit(){
+         this._route.params.forEach((params:Params)=>{
 
+            this.parametro = params['page'];
+
+         });
+    }
+
+    redirigir(){
+        this._router.navigate(['/contact', 'mikshem.vb7.com']);
+    }
  }
