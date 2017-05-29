@@ -1,7 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 
-//Importat Componentes
+//Importando Componentes
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
