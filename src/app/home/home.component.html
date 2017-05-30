@@ -1,4 +1,5 @@
 <h2>{{titulo}}</h2>
+<p>{{fecha| date:"MM/dd/yyyy"}}</p>
 <hr>
 
 <input [(ngModel)]="prenda_a_guardar">
@@ -6,5 +7,5 @@
 <p *ngIf="prenda_a_guardar">La prenda a guardar es: <strong>{{prenda_a_guardar}}</strong><p>
 <h3>6 Maneras de decir gumer:</h3>
 <ul>
-    <li *ngFor="let ropa of listado_ropa, let i=index" >. {{ropa}} <button (click)="eliminarPrenda(i)"> eliminar </button></li>
+    <li *ngFor="let ropa of listado_ropa, let i=index" >{{ropa}} <button (click)="eliminarPrenda(i)"> eliminar </button></li>
 </ul>
